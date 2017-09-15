@@ -55,8 +55,7 @@
 <!--close-top-Header-menu-->
 <!--start-top-serch-->
 <div id="search">
-  <input type="text" placeholder="Search here..."/>
-  <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+
 </div>
 <!--close-top-serch-->
 <!--sidebar-menu-->
@@ -66,11 +65,11 @@
 
     <li class="submenu"> <a href="#"><i class="icon icon-cog"></i> <span>Master & Config</span> <span class="label label-important">3</span></a>
       <ul>
-        <li><a  href="<?php echo site_url('home/bu')?>"><i class=" icon-cloud"></i>Business Unit</a></li>
-        <li><a  href="<?php echo site_url('home/aset')?>"><i class="icon-book"></i>Asset</a></li>
-        <li><a  href="<?php echo site_url('home/aset')?>"><i class="icon-group"></i>Users</a></li>
-        <li><a  href="<?php echo site_url('home/aset')?>"><i class="icon-key"></i>Access Control List</a></li>
-        <li><a  href="<?php echo site_url('home/aset')?>"><i class="icon-book"></i>Departement</a></li>
+        <li><a  href="<?php echo site_url('home/bu')?>"><i class=" icon-chevron-right"></i>Business Unit</a></li>
+        <li><a  href="<?php echo site_url('home/aset')?>"><i class="icon-chevron-right"></i>Asset</a></li>
+        <li><a  href="<?php echo site_url('home/user')?>"><i class="icon-chevron-right"></i>Users</a></li>
+        <li><a  href="<?php echo site_url('home/aset')?>"><i class="icon-chevron-right"></i>Access Control List</a></li>
+        <li><a  href="<?php echo site_url('home/aset')?>"><i class="icon-chevron-right"></i>Departement</a></li>
         <li><a href="form-validation.html">Form with Validation</a></li>
         <li><a href="form-wizard.html">Form with Wizard</a></li>
       </ul>

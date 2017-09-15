@@ -70,5 +70,19 @@ $this->load->view('bawah', $data);
     $this->load->view('bawah', $data);
 
   }
+  function user(){
+    $data['app']=$this->db->get('app')->row();
+    $this->load->view('atas', $data);
+    $this->load->view('user/user', $data);
+    $this->load->view('bawah', $data);
+
+  }
+  function adduser(){
+    $data['app']=$this->db->get('app')->row();
+    $data['role']=$this->db->get('roles')->result();
+    $this->load->view('atas', $data);
+    $this->load->view('user/add', $data);
+    $this->load->view('bawah', $data);
+  }
 
 }

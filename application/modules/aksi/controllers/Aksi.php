@@ -7,11 +7,13 @@ class Aksi extends CI_Controller{
   {
     parent::__construct();
     //Codeigniter : Write Less Do More
+
     if (empty($_POST)) {
 
     redirect($_SERVER['HTTP_REFERER']);
 
     }
+      $this->load->model('m_crud','crud');
   }
 
   function addasset()
@@ -63,6 +65,15 @@ $this->db->where('idBu', $id);
 $this->db->update('m_bu', $data);
 $this->session->set_flashdata('sukses','value');
 redirect('home/bu');
+
+}
+function adduser(){
+  $table='login';
+  var_dump($data=array('user_nip'=>strtoupper($this->input->post('nip',TRUE)),'userName'=>strtoupper($this->input->post('nama',TRUE)),
+'pass'=>base64_encode(strtoupper($this->input->post('pwd2'))),'roles_id'=>$this->input->post('role')));
+$this->crud->insert($table,$data);
+$this->session->set_flashdata('sukses','value');
+redirect('home/user');
 
 }
 

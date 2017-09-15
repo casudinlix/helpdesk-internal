@@ -15,11 +15,12 @@
 <script src="<?php echo depan()?>js/select2.min.js"></script>
 <script src="<?php echo depan()?>js/jquery.dataTables.js"></script>
 
-<script src="<?php echo depan()?>js/matrix.js"></script>
 
+<script src="<?php echo depan()?>js/jquery.validate.js"></script>
+<script src="<?php echo depan()?>js/matrix.js"></script>
 <script src="<?php echo depan()?>js/matrix.tables.js"></script>
 <script src="<?php echo depan()?>sweat/dist/sweetalert.min.js"></script>
-
+<script src="<?php echo depan()?>js/matrix.form_validation.js"></script>
 <?php if ($this->session->flashdata('sukses')): ?>
   <script>swal("Good job!", "Data Has Ben Saved!", "success")</script>
 
@@ -89,11 +90,39 @@ $("#mask-phone").mask("(999) 999-9999", {completed:function(){alert("Callback ac
         ],
 
     });
+    $('#user').DataTable({
+      "bJQueryUI": true,
+      "sPaginationType": "full_numbers",
+      "sDom": '<""l>t<"F"fp>',
+        "processing": true, //Feature control the processing indicator.
+        "serverSide": true, //Feature control DataTables' server-side processing mode.
+        "order": [], //Initial no order.
 
+        // Load data for the table's content from an Ajax source
+        "ajax": {
+            "url": "<?php echo site_url('datatable/userlist')?>",
+            "type": "POST"
+        },
 
+        //Set column definition initialisation properties.
+        "columnDefs":  [
+            {
+                "targets": [ 0 ], //first column
+                "orderable": false, //set not orderable
+            },
+            {
+                "targets": [ -1 ], //last column
+                "orderable": false, //set not orderable
+            },
+
+        ],
+
+    });
+
+$('select').select2();
 
 });
-$('select').select2();
+
 
 
 </script>
