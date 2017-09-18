@@ -69,12 +69,35 @@ redirect('home/bu');
 }
 function adduser(){
   $table='login';
-  var_dump($data=array('user_nip'=>strtoupper($this->input->post('nip',TRUE)),'userName'=>strtoupper($this->input->post('nama',TRUE)),
-'pass'=>base64_encode(strtoupper($this->input->post('pwd2'))),'roles_id'=>$this->input->post('role')));
+  $data=array('user_nip'=>strtoupper($this->input->post('nip',TRUE)),'userName'=>strtoupper($this->input->post('nama',TRUE)),
+'pass'=>base64_encode(strtoupper($this->input->post('pwd2'))),'email'=>$this->input->post('email',TRUE),'roles_id'=>$this->input->post('role'));
 $this->crud->insert($table,$data);
 $this->session->set_flashdata('sukses','value');
 redirect('home/user');
 
+}
+function edituser(){
+    $table='login';
+    $id=$this->input->post('nip');
+    $field='user_nip';
+
+    $data=array('userName'=>strtoupper($this->input->post('nama',TRUE)),'email'=>$this->input->post('email',TRUE),'active'=>$this->input->post('active'));
+
+  $this->crud->edit($table,$id,$field,$data);
+  $this->session->set_flashdata('sukses','value');
+  redirect('home/user');
+
+}
+function editpass(){
+  $table='login';
+    $id=$this->input->post('id');
+    $field='user_nip';
+
+   $data=array('pass'=>base64_encode(strtoupper($this->input->post('pwd2'))));
+
+  $this->crud->edit($table,$id,$field,$data);
+  $this->session->set_flashdata('sukses','value');
+  redirect('home/user');
 }
 
 }

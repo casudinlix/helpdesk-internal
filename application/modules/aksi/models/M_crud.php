@@ -11,12 +11,14 @@ class M_crud extends CI_Model{
   function insert($table,$data){
 return    $this->db->insert($table, $data);
   }
-  function edit($table,$field,$id,$data){
+  function edit($table,$id,$field,$data){
     $this->db->where($field, $id);
-return  $this->db->update($table, $data);
+$query=$this->db->update($table, $data);
+
+return $query;
 
   }
-  function delete($table,$field,$id,$data){
+  function delete($table,$id,$field){
     $this->db->where($field, $id);
 return  $this->db->update($table, $data);
   }

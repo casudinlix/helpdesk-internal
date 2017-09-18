@@ -124,18 +124,21 @@ function userlist(){
               $row[] = $user->nameRoles;
 
               if ($user->active=='1') {
-                  $row[] ='<span class="label label-success">Active</span>';
+                  $row[] ='<span class="label label-success">YES</span>';
               }else{
-                  $row[] ='<span class="label label-important">Non Active</span>';
+                  $row[] ='<span class="label label-important">NO</span>';
               }
 
 
 
+if ($user->nameRoles=="IT-Dev") {
+ $row[] ='<span class="icon-user"></span>';
+}else{
 
-
-              $row[] = '<a class="btn btn-sm btn-warning"  href="edituser/'."".base64_encode($user->user_nip)."".'" title="Edit" ><i class="icon icon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-primary"  href="access/'."".base64_encode($user->user_nip)."".'" title="Acces" ><i class="icon icon-key"></i> Add Access</a>';
-
+              $row[] = '<a class="btn btn-mini btn-warning"  href="edituser/'."".base64_encode($user->user_nip)."".'" title="Edit" ><i class="icon icon-pencil"></i> Edit</a>
+              <a class="btn btn-mini btn-primary"  href="access/'."".base64_encode($user->user_nip)."".'" title="Acces" ><i class="icon icon-key"></i> Setting Access</a>
+              <a class="btn btn-mini btn-inverse"  href="pass/'."".base64_encode($user->user_nip)."".'" title="Password" ><i class="icon icon-lock"></i>Change Passwod</a>';
+}
 
 
 

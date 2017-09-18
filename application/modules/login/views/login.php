@@ -63,13 +63,13 @@
   <script src="<?php echo depan()?>sweat/dist/sweetalert.min.js"></script>
       <?php if ($this->session->flashdata('error')): ?>c
         <script>swal(
-          {title: "Not Allowed Access!", text: "Please Try Again", timer: 3000, type: "error", showConfirmButton: false }
+          {title: "Not Allowed Access!", text: "Please Try Again", timer: 3000, type: "error", showConfirmButton: true }
         )</script>
       <?php endif; ?>
 
       <?php if ($this->session->flashdata('gagal')): ?>
       <script>swal(
-        {title: "Wrong password Or Nip!", text: "Please Try Again", timer: 3000, type: "error", showConfirmButton: false }
+        {title: "Wrong password Or Nip!", text: "Please Try Again", timer: 3000, type: "error", showConfirmButton: true }
       )</script>
       <?php endif; ?>
       <?php if ($this->session->flashdata('nonactive')): ?>

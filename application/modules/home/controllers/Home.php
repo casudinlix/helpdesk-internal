@@ -9,6 +9,7 @@ class Home extends CI_Controller{
     $this->load->model('m_code','code');
     if ($this->session->userdata('login')!==TRUE) {
       $this->session->set_flashdata('error','value');
+
       redirect('login');
     }
     //Codeigniter : Write Less Do More
@@ -84,5 +85,29 @@ $this->load->view('bawah', $data);
     $this->load->view('user/add', $data);
     $this->load->view('bawah', $data);
   }
+  function edituser(){
+    $data['app']=$this->db->get('app')->row();
+      $data['role']=$this->db->get('roles')->result();
+    $id=base64_decode($this->uri->segment(3));
+    $data['user']=$this->db->get_where('login',array('user_nip'=>$id))->row();
+      $data['user1']=$this->db->get_where('View_detil_role',array('user_nip'=>$id))->row();
+    $this->load->view('atas', $data);
+    $this->load->view('user/edit', $data);
+    $this->load->view('bawah', $data);
 
+  }
+  function pass(){
+    $data['app']=$this->db->get('app')->row();
+      $data['role']=$this->db->get('roles')->result();
+    $id=base64_decode($this->uri->segment(3));
+    $data['user']=$this->db->get_where('login',array('user_nip'=>$id))->row();
+      $data['user1']=$this->db->get_where('View_detil_role',array('user_nip'=>$id))->row();
+
+    $this->load->view('atas', $data);
+    $this->load->view('user/pass', $data);
+    $this->load->view('bawah', $data);
+  }
+function access(){
+  
+}
 }

@@ -4,7 +4,7 @@
 class M_user extends CI_Model {
 	var $table = 'View_detil_role';
 
-	var $column_order = array('user_nip','userName','email','nameRoles','description',''); //set column field database for datatable orderable
+	var $column_order = array('user_nip','userName','email','nameRoles','active',''); //set column field database for datatable orderable
 	var $column_search = array('user_nip','nameRoles');
 	 //set column field database for datatable searchable just firstname , lastname , address are searchable
 	var $order = array('user_nip' => 'asc'); // default order
