@@ -139,4 +139,7 @@ function adddept(){
 
 
 }
+function alla(){
+  echo "d";
+}
 }
