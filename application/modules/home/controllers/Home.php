@@ -24,6 +24,7 @@ $this->load->view('index', $data);
 $this->load->view('bawah', $data);
   }
   function aset(){
+
 $data['app']=$this->db->get('app')->row();
   $this->load->view('atas', $data);
     $this->load->view('aset/aset', $data);
@@ -108,6 +109,34 @@ $this->load->view('bawah', $data);
     $this->load->view('bawah', $data);
   }
 function access(){
-  
+  $data['app']=$this->db->get('app')->row();
+
+
+}
+function buperm(){
+  $data['app']=$this->db->get('app')->row();
+      $data['role']=$this->db->get('roles')->result();
+    $id=base64_decode($this->uri->segment(3));
+    $this->db->select('id,roles_id,user_nip',FALSE);
+    $data['user']=$this->db->get_where('login',array('user_nip'=>$id))->row();
+
+      $data['bu']=$this->db->get('m_bu')->result();
+
+    $this->load->view('atas', $data);
+    $this->load->view('user/buperm', $data);
+    $this->load->view('bawah', $data);
+}
+function dept(){
+  $data['app']=$this->db->get('app')->row();
+    $this->load->view('atas', $data);
+  $this->load->view('dept/dept', $data);
+  $this->load->view('bawah', $data);
+}
+function adddept(){
+  $id=$this->input->post('id');
+  $data['all']=$this->db->get_where('m_dept',array('id'=>$id))->row();
+  $this->load->view('dept/edit',$data);
+
+
 }
 }

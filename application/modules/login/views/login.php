@@ -6,14 +6,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<link rel="icon" href="<?php echo img()?>rk.png" type="image/x-icon" />
     <title><?php echo $app->appName ?></title>
 
 
-    <link href="<?php echo depan()?>sweat/dist/sweetalert.css" rel="stylesheet">
+
 
 
 <link rel="stylesheet" href="<?php echo depan()?>css/bootstrap.min.css" />
+<link href="<?php echo depan()?>sweat/dist/sweetalert.css" rel="stylesheet">
 <link rel="stylesheet" href="<?php echo depan()?>css/bootstrap-responsive.min.css" />
     <link rel="stylesheet" href="<?php echo depan()?>css/matrix-login.css" />
     <link href="<?php echo depan()?>font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -58,18 +59,19 @@
           </form>
       </div>
 
+ <script src="<?php echo depan()?>sweat/dist/sweetalert.min.js"></script>
       <script src="<?php echo depan()?>js/jquery.min.js"></script>
-      <script src="<?php echo depan()?>js/matrix.login.js"></script>
-  <script src="<?php echo depan()?>sweat/dist/sweetalert.min.js"></script>
+    <script src="<?php echo depan()?>js/matrix.login.js"></script>
+
       <?php if ($this->session->flashdata('error')): ?>c
         <script>swal(
-          {title: "Not Allowed Access!", text: "Please Try Again", timer: 3000, type: "error", showConfirmButton: true }
+          {title: "Not Allowed Access!", text: "Please Try Again", timer: 3000, type: "error", showConfirmButton: false }
         )</script>
       <?php endif; ?>
 
       <?php if ($this->session->flashdata('gagal')): ?>
       <script>swal(
-        {title: "Wrong password Or Nip!", text: "Please Try Again", timer: 3000, type: "error", showConfirmButton: true }
+        {title: "Wrong password Or Nip!", text: "Please Try Again", timer: 3000, type: "error", showConfirmButton: false }
       )</script>
       <?php endif; ?>
       <?php if ($this->session->flashdata('nonactive')): ?>

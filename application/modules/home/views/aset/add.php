@@ -51,6 +51,7 @@
 
            <div class="form-actions">
              <button type="submit" class="btn btn-success">Save</button>
+             <a href="<?php echo site_url('home/aset')?>" class="btn btn-danger">Back</a>
            </div>
          </form>
 

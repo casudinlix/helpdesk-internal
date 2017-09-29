@@ -36,6 +36,7 @@
            </div>
            <div class="form-actions">
              <button type="submit" class="btn btn-success">Update</button>
+             <a href="<?php echo site_url('home/bu')?>" class="btn btn-danger">Back</a>
            </div>
            </div>
 

@@ -55,7 +55,8 @@ function addbu(){
   'email'=>strtoupper($this->input->post('email',TRUE)),'addDate'=>date('Y-m-d'),'editDate'=>date('Y-m-d'),'updateBy'=>$this->session->userdata('nama'));
 $this->db->insert('m_bu', $data);
 $this->session->set_flashdata('sukses','value');
-redirect('home/bu');
+  //redirect($_SERVER['HTTP_REFERER']);
+  redirect('home/bu');
 }
 function editbu(){
 $id=$this->input->post('id');
@@ -98,6 +99,38 @@ function editpass(){
   $this->crud->edit($table,$id,$field,$data);
   $this->session->set_flashdata('sukses','value');
   redirect('home/user');
+}
+function addbuperm(){
+  $id=base64_encode($this->input->post('id', TRUE));
+  $table='bu_permision';
+  $data=array('bu_id' =>$this->input->post('bu', TRUE),'login_id'=>$this->input->post('nip'),'roles_id'=>$this->input->post('role', TRUE));
+  $this->crud->insert($table,$data);
+  $this->session->set_flashdata('sukses','value');
+  redirect($_SERVER['HTTP_REFERER']);
+
+
+}
+function deletepermbu(){
+
+
+}
+function adddept(){
+  $table='m_dept';
+$date=date('Y-m-d');
+
+  $data=array('deptName'=>strtoupper($this->input->post('nama',TRUE)),'addDate'=>$date);
+  $this->crud->insert($table,$data);
+    redirect($_SERVER['HTTP_REFERER']);
+}
+function editdept(){
+  $table='m_dept';
+$date=date('Y-m-d');
+$id=$this->input->post('id');
+$field='id';
+$data=array('deptName'=>strtoupper($this->input->post('nama',TRUE)),'editDate'=>$date,'updateBy'=>$this->session->userdata('nama'));
+$this->crud->edit($table,$id,$field,$data);
+$this->session->set_flashdata('sukses','value');
+  redirect($_SERVER['HTTP_REFERER']);
 }
 
 }

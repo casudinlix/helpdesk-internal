@@ -4,8 +4,9 @@
 <title><?php echo $app->appName ?></title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="<?php echo depan()?>sweat/dist/sweetalert.css" rel="stylesheet">
+
 <link rel="stylesheet" href="<?php echo depan()?>css/bootstrap.min.css" />
+<link href="<?php echo depan()?>sweat/dist/sweetalert.css" rel="stylesheet">
 <link rel="stylesheet" href="<?php echo depan()?>css/bootstrap-responsive.min.css" />
 <link rel="stylesheet" href="<?php echo depan()?>css/uniform.css" />
 <link rel="stylesheet" href="<?php echo depan()?>css/select2.css" />
@@ -69,7 +70,7 @@
         <li><a  href="<?php echo site_url('home/aset')?>"><i class="icon-chevron-right"></i>Asset</a></li>
         <li><a  href="<?php echo site_url('home/user')?>"><i class="icon-chevron-right"></i>Users</a></li>
         <li><a  href="<?php echo site_url('home/aset')?>"><i class="icon-chevron-right"></i>Access Control List</a></li>
-        <li><a  href="<?php echo site_url('home/aset')?>"><i class="icon-chevron-right"></i>Departement</a></li>
+        <li><a  href="<?php echo site_url('home/dept')?>"><i class="icon-chevron-right"></i>Departement</a></li>
         <li><a href="form-validation.html">Form with Validation</a></li>
         <li><a href="form-wizard.html">Form with Wizard</a></li>
       </ul>

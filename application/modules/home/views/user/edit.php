@@ -30,11 +30,20 @@
               <div class="control-group">
                 <label class="control-label">Active</label>
                 <div class="controls">
-<select name="active">
-  <?php if ($user->active==1):?>
+                  <select name="active">
+                  <?php if($user->active==1){
+                    echo "Yes";
+                  }else{
+                    echo "No";
+                  }
+                    ?>
 
-<?php endif; ?>
-  <option value="<?php echo $user->active ?>">Yes</option>
+   
+ <option value="<?php echo $user->active ?>"><?php echo $user->active ?></option>
+ 
+  
+ 
+ 
 
   <option value="1">Yes</option>
   <option value="0">No</option>
