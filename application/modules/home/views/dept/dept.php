@@ -39,7 +39,7 @@
         </div>
         <div class="modal-body">
 
-        </div>
+        </div> 
 
     </div>
        <div class="widget-box">
