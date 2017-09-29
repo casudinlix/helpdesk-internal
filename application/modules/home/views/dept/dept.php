@@ -35,11 +35,11 @@
       <div id="editdept" class="modal hide">
         <div class="modal-header">
           <button data-dismiss="modal" class="close" type="button">×</button>
-          <h3>Update Departement</h3>
+          <h3>Update Departement </h3>
         </div>
         <div class="modal-body">
 
-        </div> 
+        </div>
 
     </div>
        <div class="widget-box">
